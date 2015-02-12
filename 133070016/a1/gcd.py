@@ -3,10 +3,14 @@ def scan_in(a):
 		#a = raw_input()
 		a = int(a)
 		#print "Batata"
+		if a < 0:
+			raise TypeError
 		return a
 	except ValueError:
 		try:
 			a = long(a)
+			if a < 0:
+				raise TypeError
 		except ValueError:
 			raise TypeError
 			#raise ValueError("ASDSSDS")
