@@ -7,18 +7,19 @@ def plot(c,a):
 	for i in range(x):
 		A.append([])
 		for j in range(y):
-			#A[i].append(" ")
-			print '',join(A[i])
+			A[i].append(0)
 	
 	print A
 	
 	for i in range(len(c)):
 		print c[i], a[i]
-		A[c[i]][a[i]] = "*"
+		A[c[i]][a[i]] = 1
 	
 	print A
 	for i in range(x):
-		print A[i]
+		for j in range(y):
+			if A[i][j] == 1:
+				print
 	
 if __name__=="__main__":
 	x = 30
