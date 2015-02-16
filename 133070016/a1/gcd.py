@@ -1,25 +1,22 @@
 def scan_in(a):
-	try:
-		#a = raw_input()
-		a = int(a)
-		#print "Batata"
-		if a < 0:
-			raise TypeError
+	if a < 0:
+		raise ValueError
+		
+	if type(a) == int:
 		return a
-	except ValueError:
-		try:
-			a = long(a)
-			if a < 0:
-				raise TypeError
-		except ValueError:
-			raise TypeError
-			#raise ValueError("ASDSSDS")
+	elif type(a) == long:
 		return a
+	else:
+		raise TypeError
 	
 def gcd(a,b):
 	#print a,b
+	#print type(a)
+	#print type(b)
 	a = scan_in(a)
 	b = scan_in(b)
+	#print type(a)
+	#print type(b)
 	#print a,b
 	if a<b: 
 		a,b = b,a
@@ -32,4 +29,5 @@ def gcd(a,b):
 
 #a = raw_input()
 #b = raw_input()
-#gcd(a,b)
+#c = gcd(a,b)
+#print c
